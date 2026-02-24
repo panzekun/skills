@@ -1,0 +1,203 @@
+.skills-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.skills-header {
+  margin-bottom: 40px;
+  animation: slideInDown 0.6s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-header h2 {
+  margin-bottom: 28px !important;
+  font-size: 42px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.skills-filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 280px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-input .ant-input-affix-wrapper {
+  padding: 12px 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-input .ant-input-affix-wrapper:hover {
+  border-color: #667eea !important;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.search-input .ant-input-affix-wrapper-focused {
+  border-color: #667eea !important;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+.search-input .ant-input {
+  font-size: 15px;
+  color: #1a1a1a;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  caret-color: #4c51bf !important;
+  position: relative;
+  z-index: 1;
+}
+
+.search-input .ant-input:focus {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  caret-color: #4c51bf !important;
+}
+
+.search-input .ant-input::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 15px;
+}
+
+.search-input .anticon-search {
+  font-size: 18px;
+  color: #667eea;
+}
+
+.category-select {
+  min-width: 160px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-select .ant-select-selector {
+  border-radius: 16px !important;
+  padding: 8px 16px !important;
+  height: 48px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-select:hover .ant-select-selector {
+  border-color: #667eea !important;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.category-select.ant-select-focused .ant-select-selector {
+  border-color: #667eea !important;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+.category-select .ant-select-selection-item {
+  line-height: 30px !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 0;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 16px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Grid animation */
+.ant-row {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for grid items */
+.ant-col:nth-child(1) { animation-delay: 0.1s; }
+.ant-col:nth-child(2) { animation-delay: 0.2s; }
+.ant-col:nth-child(3) { animation-delay: 0.3s; }
+.ant-col:nth-child(4) { animation-delay: 0.4s; }
+.ant-col:nth-child(5) { animation-delay: 0.5s; }
+.ant-col:nth-child(6) { animation-delay: 0.6s; }
+.ant-col:nth-child(7) { animation-delay: 0.7s; }
+
+.ant-col {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+@media (max-width: 768px) {
+  .skills-grid-container {
+    padding: 0 16px 48px;
+  }
+
+  .skills-header h2 {
+    font-size: 28px !important;
+  }
+
+  .skills-filters {
+    flex-direction: column;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .category-select {
+    width: 100%;
+  }
+
+  .no-results {
+    padding: 60px 0;
+  }
+}

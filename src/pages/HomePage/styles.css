@@ -1,0 +1,18 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 40px 24px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-page {
+    padding: 16px 12px;
+  }
+}

@@ -1,0 +1,234 @@
+/* Skill Header */
+.skill-header {
+  margin-bottom: 48px;
+  text-align: center;
+  padding: 48px 32px;
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-icon-large {
+  font-size: 80px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.2));
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.skill-title {
+  font-size: 42px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+}
+
+.skill-name-en {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-category-tag {
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+/* Detail Cards */
+.detail-card {
+  margin-bottom: 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.detail-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.detail-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.detail-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.detail-card .ant-card-head {
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  padding: 20px 24px;
+}
+
+.detail-card .ant-card-body {
+  padding: 24px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card-title-icon {
+  font-size: 22px;
+  color: #667eea;
+}
+
+/* Usage Scenario */
+.scenario-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.scenario-item:last-child {
+  border-bottom: none;
+}
+
+.scenario-item:hover {
+  background: rgba(102, 126, 234, 0.03);
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
+}
+
+.scenario-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.scenario-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Core Features */
+.feature-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-item:hover {
+  background: rgba(82, 196, 26, 0.03);
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
+}
+
+.feature-icon {
+  color: #52c41a;
+  font-size: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Code Example */
+.code-example-wrapper {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.code-example-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skill-header {
+    padding: 32px 24px;
+  }
+
+  .skill-icon-large {
+    font-size: 64px;
+  }
+
+  .skill-title {
+    font-size: 32px;
+  }
+
+  .skill-name-en {
+    font-size: 16px;
+  }
+
+  .skill-description {
+    font-size: 16px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .scenario-text,
+  .feature-text {
+    font-size: 15px;
+  }
+}

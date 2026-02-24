@@ -1,0 +1,272 @@
+.quick-guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.guide-header {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guide-title {
+  margin-bottom: 16px !important;
+  font-size: 42px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.guide-intro {
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 36px !important;
+  font-size: 17px;
+}
+
+.progress-info {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.progress-text {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-card {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.step-card.active::before {
+  transform: scaleX(1);
+  animation: progressBar 3s linear;
+}
+
+@keyframes progressBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.step-card.completed::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #52c41a, #73d13d);
+}
+
+.step-card.waiting {
+  opacity: 0.65;
+}
+
+.step-card.active {
+  border-color: #667eea;
+  box-shadow: 0 8px 28px rgba(102, 126, 234, 0.25);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.step-card.completed {
+  border-color: #52c41a;
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.step-icon-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card.waiting .step-icon {
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.step-card.completed .step-icon {
+  background: linear-gradient(135deg, #52c41a, #73d13d);
+}
+
+.step-card.active .step-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
+  }
+}
+
+.check-mark {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #52c41a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 2;
+  animation: checkmarkPop 0.3s ease-out;
+}
+
+@keyframes checkmarkPop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.step-card.active .step-title {
+  color: #667eea;
+}
+
+.step-card.completed .step-title {
+  color: #52c41a;
+}
+
+.step-description {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.step-number {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 48px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.03);
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.step-card.active .step-number {
+  color: rgba(102, 126, 234, 0.1);
+}
+
+.step-card.completed .step-number {
+  color: rgba(82, 196, 26, 0.1);
+}
+
+@media (max-width: 768px) {
+  .quick-guide-container {
+    padding: 0 16px 48px;
+  }
+
+  .guide-title {
+    font-size: 28px !important;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .step-number {
+    font-size: 36px;
+  }
+}
